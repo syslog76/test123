@@ -3,11 +3,11 @@ using Microsoft.Extensions.Localization;
 
 namespace lang.Controllers
 {
-    public class MilBaseController : Controller
+    public class MilBaseController<T> : Controller where T : class
     {
-        public readonly IStringLocalizer<HomeController> _localizer;
+        public readonly IStringLocalizer<T> _localizer;
         public MilBaseController(
-            IStringLocalizer<HomeController> localizer
+            IStringLocalizer<T> localizer
             )
         {
             _localizer = localizer;

@@ -4,13 +4,13 @@ using Microsoft.Extensions.Localization;
 
 namespace lang.Controllers
 {
-    public class UserController : MilBaseController
+    public class UserController : MilBaseController<UserController>
     {
         private readonly ILogger<HomeController> _logger;
 
         public UserController(
             ILogger<HomeController> logger,
-            IStringLocalizer<HomeController> localizer
+            IStringLocalizer<UserController> localizer
             ) : base(localizer)
         {
             _logger = logger;
