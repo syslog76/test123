@@ -5,23 +5,21 @@ using System.Diagnostics;
 
 namespace lang.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : MilBaseController
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly IStringLocalizer<HomeController> _localizer;
 
         public HomeController(
             ILogger<HomeController> logger, 
             IStringLocalizer<HomeController> localizer
-            )
+            ) : base(localizer)
         {
             _logger = logger;
-            _localizer = localizer;
         }
 
         public IActionResult Index()
         {
-            ViewData["Title"] = _localizer["HomePageTitle"];
+            LoadLocalization();
             return View();
         }
 
