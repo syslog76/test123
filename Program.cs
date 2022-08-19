@@ -10,6 +10,8 @@ builder.Services.AddControllersWithViews()
     .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
     .AddDataAnnotationsLocalization();
 
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -31,6 +33,7 @@ app.UseRequestLocalization(new RequestLocalizationOptions
 app.UseStaticFiles();
 
 app.UseRouting();
+
 
 app.UseAuthorization();
 

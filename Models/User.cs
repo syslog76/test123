@@ -1,12 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using lang.Resources;
+using System.ComponentModel.DataAnnotations;
 
 namespace lang.Models
 {
     public class User
     {
-        [Required]
+        [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(ValidationsMessages))]
         public string Nickname { get; set; }
-        [Required]
+        [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(ValidationsMessages))]
         public string Email { get; set; }
 
     }
