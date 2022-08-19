@@ -19,7 +19,7 @@ namespace lang.Controllers
         public ActionResult Index()
         {
             LoadLocalization();
-            return View();
+            return View("Views/Register.cshtml");
         }
 
         // GET: UserController/Details/5
