@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using lang.Repository;
+using lang.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Localization;
 
@@ -7,19 +8,23 @@ namespace lang.Controllers
     public class UserController : MilBaseController<UserController>
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IUserRepository _userRepository;
+        
 
         public UserController(
             ILogger<HomeController> logger,
-            IStringLocalizer<UserController> localizer
+            IUserRepository userRepository,
+        IStringLocalizer<UserController> localizer
             ) : base(localizer)
         {
             _logger = logger;
+            _userRepository = userRepository;
         }
         // GET: UserController
         public ActionResult Index()
         {
             LoadLocalization();
-            return View("Views/Register.cshtml");
+            return View("Register");
         }
 
         // GET: UserController/Details/5
@@ -41,7 +46,11 @@ namespace lang.Controllers
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                var email = collection["Email"];
+                var nickName = collection["Nickname"];
+
+                return View("Index","aa");
+                //return RedirectToAction(nameof(Index));
             }
             catch
             {

@@ -1,4 +1,6 @@
 using System.Globalization;
+using lang.Repository;
+using lang.Service;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc.Razor;
 
@@ -11,6 +13,12 @@ builder.Services.AddControllersWithViews()
     .AddDataAnnotationsLocalization();
 
 
+var stringKeyService = new KeysService<string>();
+var userInMemoryRepository = new UserInMemoryRepository(stringKeyService);
+
+builder.Services.AddSingleton<IUserRepository>(userInMemoryRepository);
+
+builder.Services.AddSingleton(stringKeyService);
 
 var app = builder.Build();
 
