@@ -117,7 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="NickNameWrongLength" xml:space="preserve">
+    <value>Nickname lenght should be between 3 and 30 characters</value>
+  </data>
   <data name="Required" xml:space="preserve">
-    <value>Field {0} is required</value>
+    <value>This field is required</value>
+  </data>
+  <data name="WrongEmail" xml:space="preserve">
+    <value>Provided email adress is not valid</value>
   </data>
 </root>

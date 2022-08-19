@@ -61,11 +61,29 @@ namespace lang.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Field {0} is required.
+        ///   Looks up a localized string similar to Nickname lenght should be between 3 and 30 characters.
+        /// </summary>
+        public static string NickNameWrongLength {
+            get {
+                return ResourceManager.GetString("NickNameWrongLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This field is required.
         /// </summary>
         public static string Required {
             get {
                 return ResourceManager.GetString("Required", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Provided email adress is not valid.
+        /// </summary>
+        public static string WrongEmail {
+            get {
+                return ResourceManager.GetString("WrongEmail", resourceCulture);
             }
         }
     }
